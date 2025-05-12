@@ -1,0 +1,514 @@
+/* Variables de color y tipografía */
+:root {
+  --primary: #0056b3; /* Azul USalesiana */
+  --secondary: #003366; /* Azul oscuro */
+  --accent: #ff6600; /* Naranja USalesiana */
+  --dark: #1a1a2e;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  --font-main: 'Poppins', sans-serif;
+  --font-title: 'Montserrat', sans-serif;
+}
+
+/* Reset y estilos globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: white;
+  padding-top: 80px; /* Para el header fijo */
+}
+
+/* Header estilizado */
+header {
+  background-color: white;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem 5%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+  padding: 0 5%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  flex: 1;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-family: var(--font-title);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--secondary);
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.hero-image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+  z-index: 1;
+  clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Secciones */
+.section-title {
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--secondary);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  margin: 1rem auto 0;
+}
+
+/* Beneficios */
+.beneficios {
+  padding: 5rem 5%;
+  background-color: #f9f9f9;
+}
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+}
+
+.card h3 {
+  font-family: var(--font-title);
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* Precios */
+.precios {
+  padding: 5rem 5%;
+  background: white;
+}
+
+.planes-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.plan {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  border: 1px solid #eee;
+}
+
+.plan.destacado {
+  border: 2px solid var(--accent);
+}
+
+.badge {
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.plan h3 {
+  font-family: var(--font-title);
+  color: var(--secondary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.precio {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.precio span {
+  font-size: 1rem;
+  color: var(--gray);
+  font-weight: normal;
+}
+
+.features {
+  list-style: none;
+  margin: 2rem 0;
+}
+
+.features li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  color: var(--gray);
+}
+
+.features li:last-child {
+  border-bottom: none;
+}
+
+.btn-outline, .btn-solid {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  background: white;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-solid {
+  background: var(--primary);
+  color: white;
+  border: 2px solid var(--primary);
+}
+
+.btn-solid:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* Testimonios */
+.testimonios {
+  padding: 5rem 5%;
+  background: #f9f9f9;
+}
+
+.testimonio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonio-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  display: flex;
+  gap: 1.5rem;
+  max-width: 550px;
+}
+
+.testimonio-foto {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+}
+
+.testimonio-texto {
+  flex: 1;
+}
+
+.testimonio-texto p {
+  font-style: italic;
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.testimonio-autor {
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.testimonio-cargo {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+/* Footer */
+footer {
+  background: var(--secondary);
+  color: white;
+  padding: 3rem 5% 1.5rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  gap: 2rem;
+}
+
+.footer-logo {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a img {
+  width: 30px;
+  height: 30px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.footer-social a:hover img {
+  opacity: 1;
+}
+
+.footer-copyright {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Botón de Uiverse */
+.button {
+  font-size: 17px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  border: none;
+  padding: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.button span {
+  border-radius: 10px;
+  padding: 0.8em 1.3em;
+  padding-right: 1.2em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  transition: all 0.3s;
+  background-color: var(--primary);
+  background-image: radial-gradient(at 95% 89%, var(--secondary) 0px, transparent 50%), 
+                  radial-gradient(at 0% 100%, var(--secondary) 0px, transparent 50%), 
+                  radial-gradient(at 0% 0%, var(--primary) 0px, transparent 50%);
+}
+
+.button:hover span {
+  background-color: var(--secondary);
+}
+
+.button-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-conic-gradient(rgba(255, 255, 255, 0.1) 0.0000001%, rgba(255, 255, 255, 0.05) 0.000104%) 60% 60%/600% 600%;
+  filter: opacity(10%) contrast(105%);
+}
+
+.button svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+  }
+  
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    clip-path: none;
+    margin-top: 2rem;
+  }
+  
+  .hero-content {
+    margin-bottom: 2rem;
+  }
+  
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.2rem;
+  }
+  
+  nav {
+    display: none;
+  }
+  
+  .testimonio-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .footer-links {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .button span {
+    padding: 0.6em 1em;
+  }
+}
